@@ -1,16 +1,5 @@
 a {
     color:blue;
-    text-decoration: none;
-}
-.saw {
-    color: gray;
-}
-#act {
-    color: green
-}
-.active {
-    color: red;
-    font-weight: bolder;
 }
 h1 {
     font-size: 240%;

@@ -1,34 +1,38 @@
 
-function setColor(color){
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while (i<alist.length){
-        alist[i].style.color = color;
-        i=i+1;
+var body = {
+    setColor:function(color){
+        var target = document.querySelector('body');
+        target.style.color=color;
+    },
+    setBackgroundColor:function(color){
+        var target = document.querySelector('body');
+        target.style.backgroundColor=color;
+    }   
+}
+
+
+var links = {
+    setColor:function(color){
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i<alist.length){
+            alist[i].style.color = color;
+            i=i+1; 
+        }
     }
-}
-
-function setBodyColor(color){
-    var target = document.querySelector('body');
-    target.style.color=color;
-}
-
-function setBackgroundColor(color){
-    var target = document.querySelector('body');
-    target.style.backgroundColor=color;
 }
 
 function nightDayHandler(self){
     var target = document.querySelector('body');
     if (self.value==='Day'){ 
-        setBackgroundColor('black')
-        setBodyColor('white');
+        body.setBackgroundColor('black')
+        body.setColor('white');
         self.value='Night';   
-        setColor('powderblue');
+        links.setColor('powderblue');
     } else{
-        setBackgroundColor('white')
-        setBodyColor('black');
+        body.setBackgroundColor('white')
+        body.setColor('black');
         self.value='Day';            
-        setColor('blue');
+        links.setColor('blue');
     }
 }
